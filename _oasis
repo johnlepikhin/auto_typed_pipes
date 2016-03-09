@@ -10,7 +10,7 @@ Synopsis: Typed STDIO pipes
 Library typed_pipes
   FindlibName: typed_pipes
   Path: src
-  Modules: Pipe, PipeShell, PipeNullChar, PipeFindPrint0, PipeHuman
+  Modules: Pipe, PipeShell, PipeNullChar, PipeFindPrint0, PipeHuman, PipeHex
   BuildDepends: shell_escape, pcre, unix
 
 Library lwt
