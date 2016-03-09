@@ -20,12 +20,19 @@ Library lwt
   Modules: PipeLwt
   BuildDepends: typed_pipes, lwt, lwt.unix
 
-Library pipeline_unix
+Library unix
   Path: src
   FindlibName: unix
   FindlibParent: typed_pipes
   Modules: PipeUnix
   BuildDepends: typed_pipes, unix
+
+Library arg
+  Path: src
+  FindlibName: arg
+  FindlibParent: typed_pipes
+  Modules: ArgPipeFormat
+  BuildDepends: typed_pipes
 
 Executable test_pipeShellLwt
   Path: tests
