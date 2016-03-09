@@ -1,0 +1,35 @@
+OASISFormat: 0.4
+Name: typed_pipes
+Version: 1.0
+License: BSD-3-clause
+Authors: Evgenii Lepikhin
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+Synopsis: Typed STDIO pipes
+
+Library typed_pipes
+  FindlibName: typed_pipes
+  Path: src
+  Modules: Pipe, PipeShell, PipeNullChar, PipeFindPrint0, PipeHuman
+  BuildDepends: shell_escape, pcre, unix
+
+Library lwt
+  Path: src
+  FindlibName: lwt
+  FindlibParent: typed_pipes
+  Modules: PipeLwt
+  BuildDepends: typed_pipes, lwt, lwt.unix
+
+Library pipeline_unix
+  Path: src
+  FindlibName: unix
+  FindlibParent: typed_pipes
+  Modules: PipeUnix
+  BuildDepends: typed_pipes, unix
+
+Executable test_pipeShellLwt
+  Path: tests
+  Install: false
+  MainIs: test_pipeShellLwt.ml
+  BuildDepends: typed_pipes, typed_pipes.lwt
+
