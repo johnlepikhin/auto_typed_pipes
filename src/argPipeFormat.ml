@@ -7,6 +7,7 @@ let list = [
   "shellescape", (module PipeShell.Make : Pipe.PIPE_FORMAT), "Bash-compatible escapes; fields separated by <TAB> and records by <NEWLINE>";
   "nullchar", (module PipeNullChar.Make : Pipe.PIPE_FORMAT), "0x00, <BACKSLASH> and 0x01 are escaped. Fields separated by 0x01 and records by 0x00.";
   "human", (module PipeHuman.Make : Pipe.PIPE_FORMAT), "<TAB>, <BACKSLASH> and <NEWLINE> are escaped. Fields separated by <TAB> and records by <NEWLINE>";
+  "hex", (module PipeHuman.Make : Pipe.PIPE_FORMAT), "Like 'human', but char are additionally separated by spaces and all non-printable chars printed in hex (for debugging)";
   "findprint0", (module PipeFindPrint0.Make : Pipe.PIPE_FORMAT), "No escaped charactes at all. Records are separated by 0x00 and assumed to have only one field";
 ]
 

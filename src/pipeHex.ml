@@ -17,7 +17,7 @@ struct
       ) s;
     Buffer.contents b
 
-  let of_string =
+  let of_string s =
     failwith "Hex pipe format for input is not supported"
   
   let to_string = function
